@@ -15,9 +15,6 @@
 
 import future 
 
-discard """ when not defined(nimhygiene):
-  {.pragma: dirty.}
- """
 type
 
   LinkType* = enum
