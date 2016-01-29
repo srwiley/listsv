@@ -59,7 +59,7 @@ echo "Double Scores: " , $doubleScores, " len " , doubleScores.len
 ```
 The above code block also works for singly linked lists, but the 'insertBeforeHere' proc is inherently slow for a singly linked list; it needs to scan the list from the beginning to find the upstream link.
 
-The next code block does the same job but is more efficient for singly linked lists since it only uses "prepend" and "insertAfter", both of which are efficient for both singly and doubly linked lists:
+The next code block does the same job but is more efficient for singly linked lists since it only uses the "prepend" and "insertAfterHere" procs, which are efficient for both singly and doubly linked lists:
 ```
 let singleScores = newLinkedList[birdScore]()
 for s in scores:
