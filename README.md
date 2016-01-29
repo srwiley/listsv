@@ -47,7 +47,6 @@ The above fills the allscores list with each birdScore in order. But what if we 
 This makes an empty doubly linked list and then collects the highest 5 scores into the list sorted from high to low:
 ```
 let doubleScores = newDoubleLinkedList[birdScore]()
-# Collects a LinkedList of the 5 highest scoring birdScores sorted high to low
 for s in scores:
    let ok = doubleScores.insertBeforeHere(s, t => t.score < s.score)
    if not ok:
