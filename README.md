@@ -8,6 +8,7 @@ LinkedList objects are defined on creation as using either singly (type Link) or
 
 ```
 import listsv, future
+
 let # Both of these are type LinkedList[int]
   singleList = createLinkedList[int](ltSingle)
   doubleList = createLinkedList[int](ltDouble)
