@@ -43,7 +43,7 @@ and this will assert:
 ```
 assert allscores.len == 7
 ```
-The aboce fills the allscores list with each birdScore in order. But what if we want to capture only the highest 5 scores?
+The above fills the allscores list with each birdScore in order. But what if we want to capture only the highest 5 scores?
 
 This makes an empty doubly linked list and then collects the highest 5 scores into the list:
 ```
