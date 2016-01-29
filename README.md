@@ -4,7 +4,7 @@ finding, deleting, extracting, and forward and reverse iterators.
 
 The source code includes tests and examples. Html docs for the module can be generated using the nim doc command.
 
-LinkedList types are defined as using either single or double links on creation, any procs with different behavoirs between the two are set as proc fields in the LinkedList on creation to produce the correct behavior without overhead or problems of using generics with dynamic method dispatching.
+LinkedList types are defined as using either singly (type Link) or doubly (type DoubleLink) linked links on creation. Any procs that differ between the link types are set as proc fields in the LinkedList on creation to produce the correct behavior without overhead or problems of using generics with dynamic method dispatching.
 
 ```
 import listsv, future
@@ -20,10 +20,9 @@ assert singleList.newLink(1) of Link[int]
 assert doubleList.newLink(1) of DoubleLink[int]
 ```
 
-All procs works for both singly and doubly linked lists but programmers should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists, because singly linked lists require searching from the start of the list to find the upstream link.
+All procs work for both singly and doubly linked lists, but programmers should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists, because singly linked lists require searching from the start of the list to find the upstream link.
 
-For test purposes let's define a type "birdScore" which will be the value type for 
-the linked list, and create an array of example birdScores:
+Let's define a type "birdScore" which will be the value type for example linked lists, although basic types such as int would work as well. Now define an example array of birdScores:
 ```
 type birdScore = tuple[score: float, name :string]
 const scores : array[7,birdScore] = 
