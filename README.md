@@ -99,10 +99,10 @@ Links of both types can be extracted into new lists without creating new link ob
 
 ```
 # It turns out that every team whose name's second letter is 'a' 
-# has been found guilty of deflated the game ball.
+# has been found guilty of deflating the game ball.
 # The cheaters must be removed fromm the list!
-let cheaters = singleScores.extract( t => t.name[1] == 'a')
 
+let cheaters = singleScores.extract( t => t.name[1] == 'a')
 echo "Cheaters: " , $cheaters
 echo "Clean Scores: " , $singleScores
 echo "Winners are the " , singleScores.head.value.name, "!"
