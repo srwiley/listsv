@@ -44,7 +44,7 @@ assert allscores.len == 7
 ```
 The above fills the allscores list with each birdScore in order. But what if we want to capture only the highest 5 scores?
 
-This makes an empty doubly linked list and then collects the highest 5 scores into the list:
+This makes an empty doubly linked list and then collects the highest 5 scores into the list sorted from high to low:
 ```
 let doubleScores = newDoubleLinkedList[birdScore]()
 # Collects a LinkedList of the 5 highest scoring birdScores sorted high to low
