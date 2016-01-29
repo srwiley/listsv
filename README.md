@@ -58,7 +58,7 @@ for s in scores:
       
 echo "Double Scores: " , $doubleScores, " len " , doubleScores.len
 ```
-The above code block also works for singly linked lists, but the 'insertBeforeHere' proc is inherently slow for a singly list list; it needs to scan the list from the beginning to find the upstream link.
+The above code block also works for singly linked lists, but the 'insertBeforeHere' proc is inherently slow for a singly linked list; it needs to scan the list from the beginning to find the upstream link.
 
 The next code block does the same job but is more efficient for singly linked lists since it only uses "prepend" and "insertAfter", both of which are efficient for both singly and doubly linked lists:
 ```
@@ -79,20 +79,20 @@ Links for both types can be extracted into new lists without creating new link o
 
 ```
 # It turns out that every team whose name's second letter is 'a' 
-# has been found guilt of deflated the game ball.
+# has been found guilty of deflated the game ball.
 # The cheaters must be removed fromm the list!
 let cheaters = singleScores.extract( t => t.name[1] == 'a')
 
-echo "cheaters: " , $cheaters
-echo "clean Scores: " , $singleScores
+echo "Cheaters: " , $cheaters
+echo "Clean Scores: " , $singleScores
 echo "Winners are the " , singleScores.head.value.name, "!"
 ```
-The output of all of the above code blocks is :
+Output of the above code blocks combined is :
 ```
 Double Scores: {(score: 4.8, name: Falcons), (score: 4.5, name: Hawks), (score: 3.2, name: Juncos), (score: 2.5, name: Gulls)} len 4
 Single Scores: [(score: 4.8, name: Falcons), (score: 4.5, name: Hawks), (score: 3.2, name: Juncos), (score: 2.5, name: Gulls)] len 4
-cheaters: [(score: 4.8, name: Falcons), (score: 4.5, name: Hawks)]
-clean Scores: [(score: 3.2, name: Juncos), (score: 2.5, name: Gulls)]
+Cheaters: [(score: 4.8, name: Falcons), (score: 4.5, name: Hawks)]
+Clean Scores: [(score: 3.2, name: Juncos), (score: 2.5, name: Gulls)]
 Winners are the Juncos!
 ```
 
