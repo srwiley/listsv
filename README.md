@@ -20,7 +20,7 @@ assert singleList.newLink(1) of Link[int]
 assert doubleList.newLink(1) of DoubleLink[int]
 ```
 
-All procs works for both singly and doubly linked lists but programmers should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists, because singly linked list require iterating from the start of the list to find the upstream link. For example:
+All procs works for both singly and doubly linked lists but programmers should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists, because singly linked list require iterating from the start of the list to find the upstream link.
 
 For test purposes let's define a type "birdScore" to be the value type for 
 the linked list, and create an array of example birdScores:
