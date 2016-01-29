@@ -4,7 +4,7 @@ finding, deleting, extracting, and forward and reverse iterators.
 
 The source code includes tests and examples. Html docs for the module can be generated using the nim doc command.
 
-LinkedList types are assigned to having single or double links on creation, and some procs fields are set in the LinkedList object to produce the correct behavior without the overhead and problems of using generics with dynamic method dispatching.
+LinkedList types are assigned to using single or double links on creation, and some procs are defined as fields that are set in the LinkedList object to produce the correct behavior without the overhead and problems of using generics with dynamic method dispatching.
 
 ```
 import listsv, future
