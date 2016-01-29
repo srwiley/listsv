@@ -4,19 +4,25 @@ finding, deleting, extracting, and forward and reverse iterators.
 
 The source code includes tests and examples. Html docs for the module can be generated using the nim doc command.
 
-LinkedList types are assigned to having single or double links on creation, and some procs fields are set in the LinkedList object to produce the correct behavior without the overhead and problems with generics and dynamic method dispatching. All procs works for both singly and doulby linked lists but the programmer should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists. For example:
+LinkedList types are assigned to having single or double links on creation, and some procs fields are set in the LinkedList object to produce the correct behavior without the overhead and problems of using generics with dynamic method dispatching.
+
 ```
 import listsv, future
 let # Both of these are type LinkedList[int]
   singleList = createLinkedList[int](ltSingle)
   doubleList = createLinkedList[int](ltDouble)
   
-# But generates different Link types
+# But the newlink proc generates different Link types.
+# That is because the newlink proc field in the 
+# LinkedList object was set by the createLinkedList
+# procedure.
 assert singleList.newLink(1) of Link[int]
 assert doubleList.newLink(1) of DoubleLink[int]
 ```
 
-For test purposes define a type "birdScore" to be the value type for 
+All procs works for both singly and doubly linked lists but programmers should be aware that procs requiring reverse transversal through the links are more efficient for doubly linked lists, because singly linked list require iterating from the start of the list to find the upstream link. For example:
+
+For test purposes let's define a type "birdScore" to be the value type for 
 the linked list, and create an array of example birdScores:
 ```
 type birdScore = tuple[score: float, name :string]
@@ -51,9 +57,9 @@ for s in scores:
       
 echo "Double Scores: " , $doubleScores, " len " , doubleScores.len
 ```
-The above code block also works for singly linked lists, but the 'insertBeforeHere' procedure is inherently slow for a single list list; it needs to scan the list from the beginning to find the upstream link.
+The above code block also works for singly linked lists, but the 'insertBeforeHere' proc is inherently slow for a singly list list; it needs to scan the list from the beginning to find the upstream link.
 
-The next code block does the same job but is more efficient for singly linked lists since it only uses "prepend" and "insertAfter", both of which are efficient for singly and doubly linked lists:
+The next code block does the same job but is more efficient for singly linked lists since it only uses "prepend" and "insertAfter", both of which are efficient for both singly and doubly linked lists:
 ```
 let singleScores = newLinkedList[birdScore]()
 for s in scores:
@@ -80,7 +86,7 @@ echo "cheaters: " , $cheaters
 echo "clean Scores: " , $singleScores
 echo "Winners are the " , singleScores.head.value.name, "!"
 ```
-The output of all of the above code blocks combined is :
+The output of all of the above code blocks is :
 ```
 Double Scores: {(score: 4.8, name: Falcons), (score: 4.5, name: Hawks), (score: 3.2, name: Juncos), (score: 2.5, name: Gulls)} len 4
 Single Scores: [(score: 4.8, name: Falcons), (score: 4.5, name: Hawks), (score: 3.2, name: Juncos), (score: 2.5, name: Gulls)] len 4
