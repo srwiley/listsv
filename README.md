@@ -4,7 +4,7 @@ finding, deleting, extracting, and forward and reverse iterators.
 
 The source code includes tests and examples. Html docs for the module can be generated using the nim doc command.
 
-LinkedList objects are defined on creation as using either singly (type Link) or doubly (type DoubleLink) linked links on creation. Any procs that differ between the link types are set as proc fields in the LinkedList when instantiated to produce the correct behavior without overhead or problems related to using generics with dynamic method dispatching.
+LinkedList objects are defined on creation as using either singly (type Link) or doubly (type DoubleLink) linked links. Any procs that differ between the link types are set as proc fields in the LinkedList when instantiated to produce the correct behavior without overhead or problems related to using generics with dynamic method dispatching.
 
 ```
 import listsv, future
