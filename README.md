@@ -75,7 +75,7 @@ for s in scores:
       
 echo "Single Scores: " , $singleScores, " len " , singleScores.len
 ```
-Links for both types can be extracted into new lists without creating new link objects and refs, thus avoiding GC overhead, can be done with the "extract" proc:
+Links for both types can be extracted into new lists without creating new link objects and refs, thus avoiding GC overhead, using the "extract" proc:
 
 ```
 # It turns out that every team whose name's second letter is 'a' 
